@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/RSS-FronEnd/static/js/main.b4adbb39.chunk.js",
-    "main.js.map": "/RSS-FronEnd/static/js/main.b4adbb39.chunk.js.map",
+    "main.js": "/RSS-FronEnd/static/js/main.7d502193.chunk.js",
+    "main.js.map": "/RSS-FronEnd/static/js/main.7d502193.chunk.js.map",
     "runtime-main.js": "/RSS-FronEnd/static/js/runtime-main.a87ff236.js",
     "runtime-main.js.map": "/RSS-FronEnd/static/js/runtime-main.a87ff236.js.map",
     "static/js/2.313255bd.chunk.js": "/RSS-FronEnd/static/js/2.313255bd.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.a87ff236.js",
     "static/js/2.313255bd.chunk.js",
-    "static/js/main.b4adbb39.chunk.js"
+    "static/js/main.7d502193.chunk.js"
   ]
 }
