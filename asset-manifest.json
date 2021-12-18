@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/RSS-FronEnd/static/js/main.2032a60f.chunk.js",
-    "main.js.map": "/RSS-FronEnd/static/js/main.2032a60f.chunk.js.map",
+    "main.js": "/RSS-FronEnd/static/js/main.3c04c2ee.chunk.js",
+    "main.js.map": "/RSS-FronEnd/static/js/main.3c04c2ee.chunk.js.map",
     "runtime-main.js": "/RSS-FronEnd/static/js/runtime-main.a87ff236.js",
     "runtime-main.js.map": "/RSS-FronEnd/static/js/runtime-main.a87ff236.js.map",
-    "static/js/2.679ffdb4.chunk.js": "/RSS-FronEnd/static/js/2.679ffdb4.chunk.js",
-    "static/js/2.679ffdb4.chunk.js.map": "/RSS-FronEnd/static/js/2.679ffdb4.chunk.js.map",
+    "static/js/2.313255bd.chunk.js": "/RSS-FronEnd/static/js/2.313255bd.chunk.js",
+    "static/js/2.313255bd.chunk.js.map": "/RSS-FronEnd/static/js/2.313255bd.chunk.js.map",
     "static/js/3.887cb5b9.chunk.js": "/RSS-FronEnd/static/js/3.887cb5b9.chunk.js",
     "static/js/3.887cb5b9.chunk.js.map": "/RSS-FronEnd/static/js/3.887cb5b9.chunk.js.map",
     "index.html": "/RSS-FronEnd/index.html",
-    "static/js/2.679ffdb4.chunk.js.LICENSE.txt": "/RSS-FronEnd/static/js/2.679ffdb4.chunk.js.LICENSE.txt",
+    "static/js/2.313255bd.chunk.js.LICENSE.txt": "/RSS-FronEnd/static/js/2.313255bd.chunk.js.LICENSE.txt",
     "static/media/HSA-logo.97291a72.svg": "/RSS-FronEnd/static/media/HSA-logo.97291a72.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a87ff236.js",
-    "static/js/2.679ffdb4.chunk.js",
-    "static/js/main.2032a60f.chunk.js"
+    "static/js/2.313255bd.chunk.js",
+    "static/js/main.3c04c2ee.chunk.js"
   ]
 }
