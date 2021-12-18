@@ -47,9 +47,9 @@ function App() {
               </RequireAuth>
             }
           />
-        <Route path="/RSS-FronEnd/login" element={<Login />} />
-        <Route path="/RSS-FronEnd/register" element={<Register />} />
-        <Route path="/RSS-FronEnd/accountRecovery" element={<AccountRecovery />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/accountRecovery" element={<AccountRecovery />} />
       </Routes>
     </div>
 
@@ -64,7 +64,7 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 
 console.log("isAuth", globaluser.isAuth)
   if (!globaluser.isAuth) {
-    return <Navigate to="/RSS-FronEnd/login" />;
+    return <Navigate to="/login" />;
   }
   return children;
 }

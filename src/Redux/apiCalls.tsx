@@ -78,7 +78,7 @@ export const apiCall_Login = async (phone: any, password: any, dispatch: any) =>
         console.log(res.data)
         if (res.data.token) {
             localStorage.setItem("Token", res.data.token);
-            dispatch(loginSuccess());
+            // dispatch(loginSuccess());
             apiCall_CheckLogin(res.data.token,dispatch);
         } else {
             dispatch(loginFailure());
