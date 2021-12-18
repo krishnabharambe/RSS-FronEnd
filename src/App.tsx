@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Auth from './AppViews/AuthViews/Auth';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate
@@ -20,13 +20,14 @@ function App() {
   const dispatch = useDispatch();
   const globaluser = useSelector((state: RootStateOrAny) => state.user);
   const [loading, setLoading] = React.useState(true);
+  const [loginfailed, setLoginfailed] = React.useState(false);
   useEffect(() => {
     const token = localStorage.getItem("Token");
     if (token) {
       apiCall_CheckLogin(token, dispatch);
     } else {
       console.log("no token found");
-      // setLoginfailed(true);
+      setLoginfailed(true);
     }
     setTimeout(() => {
       setLoading(false);
@@ -39,16 +40,16 @@ function App() {
     <div>
       <Routes>
         <Route
-            path="/"
+            path="/RSS-FronEnd"
             element={
               <RequireAuth>
                <Home />
               </RequireAuth>
             }
           />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/accountRecovery" element={<AccountRecovery />} />
+        <Route path="/RSS-FronEnd/login" element={<Login />} />
+        <Route path="/RSS-FronEnd/register" element={<Register />} />
+        <Route path="/RSS-FronEnd/accountRecovery" element={<AccountRecovery />} />
       </Routes>
     </div>
 
@@ -63,7 +64,7 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 
 console.log("isAuth", globaluser.isAuth)
   if (!globaluser.isAuth) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/RSS-FronEnd/login" />;
   }
   return children;
 }

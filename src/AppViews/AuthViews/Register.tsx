@@ -27,7 +27,6 @@ export default function Register() {
   const [phoneErrorMsg, setpphoneErrorMsg] = React.useState<string>()
   const [Otp, setOtp] = React.useState<string>()
   const [otpSentError, setotpSentError] = React.useState<string>()
-  const [OtpVerified, setOtpVerified] = React.useState<Boolean>(false);
   const [User_Password, setUser_Password] = React.useState<string>("");
   const [User_PasswordError, setUser_PasswordError] = React.useState<string>()
   const dispatch = useDispatch();
