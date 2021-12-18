@@ -17,7 +17,7 @@ import {
 export const apiCall_ValidatePhone = async (phone: any, dispatch: any) => {
     dispatch(startValidatingPhone());
     try {
-        const res = await axios.post("http://127.0.0.1:8000/api/ValidatePhone/", { phone });
+        const res = await axios.post("https://krishnabharambe.pythonanywhere.com/api/ValidatePhone/", { phone });
         console.log(res.data)
         console.log(res.data.status)
         if (res.data.status) {
@@ -34,7 +34,7 @@ export const apiCall_ValidatePhone = async (phone: any, dispatch: any) => {
 export const apiCall_ValidateOtp = async (phone: any, otp: any, dispatch: any) => {
     dispatch(startValidatingPhone());
     try {
-        const res = await axios.post("http://127.0.0.1:8000/api/ValidateOTP/", {
+        const res = await axios.post("https://krishnabharambe.pythonanywhere.com/api/ValidateOTP/", {
             phone: phone,
             otp: otp,
         });
@@ -51,7 +51,7 @@ export const apiCall_ValidateOtp = async (phone: any, otp: any, dispatch: any) =
 export const apiCall_Register = async (phone: any, password: any, dispatch: any) => {
     dispatch(startValidatingPhone());
     try {
-        const res = await axios.post("http://127.0.0.1:8000/api/register/", {
+        const res = await axios.post("https://krishnabharambe.pythonanywhere.com/api/register/", {
             phone: phone,
             password: password,
         });
@@ -71,7 +71,7 @@ export const apiCall_Register = async (phone: any, password: any, dispatch: any)
 export const apiCall_Login = async (phone: any, password: any, dispatch: any) => {
     dispatch(startValidatingPhone());
     try {
-        const res = await axios.post("http://127.0.0.1:8000/api/login/", {
+        const res = await axios.post("https://krishnabharambe.pythonanywhere.com/api/login/", {
             phone: phone,
             password: password,
         });
@@ -94,7 +94,7 @@ export const apiCall_CheckLogin = async (token:any, dispatch: any) => {
     try {
         const token = localStorage.getItem("Token");
         const res = await axios
-        .get("http://127.0.0.1:8000/api/userAPI/", {
+        .get("https://krishnabharambe.pythonanywhere.com/api/userAPI/", {
           headers: {
             Authorization: `token ${token}`,
           },
