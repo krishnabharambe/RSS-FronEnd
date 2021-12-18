@@ -40,7 +40,7 @@ function App() {
     <div>
       <Routes>
         <Route
-            path="/RSS-FronEnd"
+            path="/"
             element={
               <RequireAuth>
                <Home />
