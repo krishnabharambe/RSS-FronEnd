@@ -10,7 +10,7 @@ import Home from './AppViews/HomePage/Home';
 import Login from './AppViews/AuthViews/Login';
 import Register from './AppViews/AuthViews/Register';
 import axios from 'axios';
-import { apiCall_CheckLogin } from './Redux/apiCalls';
+import { apiCall_CheckLogin, apiCall_FetchSliderData } from './Redux/apiCalls';
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import LoadingPage from './AppViews/HomePage/LoadingPage';
 import AccountRecovery from './AppViews/AuthViews/AccountRecovery';
@@ -25,6 +25,7 @@ function App() {
     const token = localStorage.getItem("Token");
     if (token) {
       apiCall_CheckLogin(token, dispatch);
+      apiCall_FetchSliderData(dispatch);
     } else {
       console.log("no token found");
       setLoginfailed(true);

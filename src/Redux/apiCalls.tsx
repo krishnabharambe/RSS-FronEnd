@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getSliderImages, startfetchingImages, startfetchingImagesComplete } from "./sliderSlice";
 import {
     startValidatingPhone, 
     phonevalidatedOtpSent, 
@@ -116,3 +117,25 @@ export const apiCall_CheckLogin = async (token:any, dispatch: any) => {
         console.log(err)
     }
 };
+
+
+
+export const apiCall_FetchSliderData = async (dispatch: any) => {
+    dispatch(startfetchingImages());
+    try {
+
+        const res = await axios
+        .get("https://krishnabharambe.pythonanywhere.com/api/allSlidercards/");
+        console.log(res.data)
+        if(res.data) {
+            dispatch(getSliderImages(res.data));
+            dispatch(startfetchingImagesComplete());
+        } else {
+            console.log("Error while fetchng slidering images")
+        }
+    } catch (err) {
+        dispatch(loginFailure2());
+        console.log(err)
+    }
+};
+
