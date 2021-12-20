@@ -27,8 +27,8 @@ export const DefaultSettingsT: SettingsT = {
     animation: "fade",
     indicators: false,
     duration: 500,
-    navButtonsAlwaysVisible: true,
-    navButtonsAlwaysInvisible: false,
+    navButtonsAlwaysVisible: false,
+    navButtonsAlwaysInvisible: true,
     cycleNavigation: true,
     fullHeightHover: true,
     swipe: true
