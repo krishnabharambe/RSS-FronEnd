@@ -9,11 +9,13 @@ import {
 } from '@mui/material'
 import Settings, { DefaultSettingsT, SettingsT } from './Settings';
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 
 const Slider = () => {
     const [settings, setSettings] = useState<SettingsT>(DefaultSettingsT);
     const globalSlider = useSelector((state: RootStateOrAny) => state.slider);
+
     
     return (
         <div>
@@ -53,7 +55,7 @@ function Project({ item }: ProjectProps) {
                 <CardMedia
                     component="img"
                     src={item.image}
-                    height="140"
+                    height="150"
                 >
                 </CardMedia>
             </Card>
