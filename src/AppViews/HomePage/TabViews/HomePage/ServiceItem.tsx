@@ -25,7 +25,7 @@ export default function ServiceItem(props:any) {
         <ListItemAvatar>
           <Avatar
             variant="rounded"
-            src={"http://localhost:8000" + icon}
+            src={"https://krishnabharambe.pythonanywhere.com" + icon}
           ></Avatar>
         </ListItemAvatar>
         <ListItemText primary={title} secondary={shortdescription} />
