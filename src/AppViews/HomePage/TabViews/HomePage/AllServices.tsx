@@ -34,9 +34,9 @@ export default function AllServices() {
   });
 
   return (
-    <div>
+    <div>       <Box fontWeight="fontWeightBold">Services</Box>
       <Card>
-           <Box fontWeight="fontWeightBold">Services</Box>
+    
           <List>{RenderServices}</List>
       </Card>
     </div>
