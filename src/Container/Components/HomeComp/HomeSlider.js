@@ -1,15 +1,9 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -36,7 +30,7 @@ function HomeSlider() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <Box sx={{flexGrow: 1 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
@@ -48,10 +42,11 @@ function HomeSlider() {
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
+                fullwidth
                 sx={{
                   display: 'block',
                   overflow: 'hidden',
-                  width: '100%',
+                  width: '100%'
                 }}
                 src={"https://krishnabharambe.pythonanywhere.com"+step.image}
                 alt={step.title}

@@ -12,6 +12,9 @@ import Login from './Container/Auth/Login';
 import Register from './Container/Auth/Register';
 import Home from './Container/Home/Home';
 import LoadingPage from './Container/Components/LoadingPage';
+import AllServices from './Container/Components/HomeComp/AllServices';
+import SubServices from './Container/Components/HomeComp/SubServices';
+import SubServiceDetail from './Container/Components/HomeComp/SubServiceDetail';
 
 
 function App() {
@@ -34,26 +37,29 @@ function App() {
   }, []);
 
   return (
-<div>
-{loading ? <div><LoadingPage /></div> :
     <div>
-      <Routes>
-        <Route
-            path="/"
-            element={
-              <RequireAuth>
-               <Home />
-              </RequireAuth>
-            }
-          />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/accountRecovery" element={<AccountRecovery />} />
-      </Routes>
-    </div>
+      {loading ? <div><LoadingPage /></div> :
+        <div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/accountRecovery" element={<AccountRecovery />} />
+            <Route path="/allservices" element={<AllServices />} />
+            <Route path="/services/:mainID" element={<SubServices />} />
+            <Route path="/subservices/:subMainID" element={<SubServiceDetail />} />
+          </Routes>
+        </div>
 
-}
-</div>
+      }
+    </div>
   );
 }
 
@@ -61,7 +67,7 @@ function App() {
 function RequireAuth({ children }) {
   const globaluser = useSelector((state) => state.user);
 
-console.log("isAuth", globaluser.isAuth)
+  console.log("isAuth", globaluser.isAuth)
   if (!globaluser.isAuth) {
     return <Navigate to="/login" />;
   }
