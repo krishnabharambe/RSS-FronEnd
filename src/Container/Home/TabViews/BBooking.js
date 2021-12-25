@@ -17,12 +17,10 @@ export default function BBooking() {
 
         const getAllSubServices = async () => {
             await getUserBooking(dispatch);
+            setGloBookingItem(globalbooking);
         };
         getAllSubServices();
-        if (globalbookingStatus.loadingview){
-            setGloBookingItem(globalbooking);
-        }
-        console.log(globalbooking)
+    
     }, []);
 
     const RenderBookings = gloBookingItem.map((booking) => {
