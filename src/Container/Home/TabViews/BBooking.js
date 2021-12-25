@@ -19,8 +19,9 @@ export default function BBooking() {
             await getUserBooking(dispatch);
         };
         getAllSubServices();
-
-        setGloBookingItem(globalbooking)
+        if (globalbookingStatus.loadingview){
+            setGloBookingItem(globalbooking);
+        }
         console.log(globalbooking)
     }, []);
 
