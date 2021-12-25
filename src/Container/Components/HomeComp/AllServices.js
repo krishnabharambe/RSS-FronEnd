@@ -19,9 +19,6 @@ export default function AllServices() {
   };
 
   useEffect(() => {
-    //   const retriveV_services = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    //   if (retriveV_services) setContacts(retriveV_services);
-
     const getAllServices = async () => {
       const allServices = await retriveAllServices();
       if (allServices) setV_services(allServices);
