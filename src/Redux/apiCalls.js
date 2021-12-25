@@ -1,10 +1,12 @@
 import axios from "axios";
+import { viewMyBooking } from "./BookingSlice";
+import { ApiRequestErrorReducer, startloading, stoploading } from "./loadingSlice";
 import { getSliderImages, startfetchingImages, startfetchingImagesComplete } from "./sliderSlice";
 import {
-    startValidatingPhone, 
-    phonevalidatedOtpSent, 
-    otpValidationfailure, 
-    phonevalidatedOtpValidation, 
+    startValidatingPhone,
+    phonevalidatedOtpSent,
+    otpValidationfailure,
+    phonevalidatedOtpValidation,
     validationfailure,
     registerValidation,
     registerValidationError,
@@ -80,7 +82,7 @@ export const apiCall_Login = async (phone, password, dispatch) => {
         if (res.data.token) {
             localStorage.setItem("Token", res.data.token);
             // dispatch(loginSuccess());
-            apiCall_CheckLogin(res.data.token,dispatch);
+            apiCall_CheckLogin(res.data.token, dispatch);
         } else {
             dispatch(loginFailure());
         }
@@ -90,19 +92,65 @@ export const apiCall_Login = async (phone, password, dispatch) => {
     }
 };
 
+
+export const SubmitSRequest = async (requestData, dispatch) => {
+    dispatch(startloading());
+    const token = localStorage.getItem("Token");
+    try {
+        const res = await axios.post("https://krishnabharambe.pythonanywhere.com/api/requests/add/",
+            requestData
+        );
+        if (res.data.status) {
+            dispatch(ApiRequestErrorReducer(res.data));
+            dispatch(stoploading());
+            console.log("Request submitted")
+        } else {
+            dispatch(ApiRequestErrorReducer(res.data));
+        }
+    } catch (err) {
+        dispatch(stoploading());
+        console.log(err)
+    }
+};
+
+
+export const getUserBooking = async (dispatch) => {
+    dispatch(startloading());
+    const token = localStorage.getItem("Token");
+    try {
+        const res = await axios.get("https://krishnabharambe.pythonanywhere.com/api/requests/", {
+            headers: {
+                Authorization: `token ${token}`,
+            },
+        });
+        if (res.data) {
+            console.log("i am in", res.data)
+            dispatch(viewMyBooking(res.data));
+            dispatch(stoploading());
+        } else {
+            console.log("i am out")
+            dispatch(stoploading());
+        }
+    } catch (err) {
+        dispatch(stoploading());
+        console.log("i am Error")
+        console.log(err)
+    }
+};
+
 export const apiCall_CheckLogin = async (token, dispatch) => {
     dispatch(startValidatingPhone());
     try {
         const token = localStorage.getItem("Token");
         const res = await axios
-        .get("https://krishnabharambe.pythonanywhere.com/api/userAPI/", {
-          headers: {
-            Authorization: `token ${token}`,
-          },
-        });
+            .get("https://krishnabharambe.pythonanywhere.com/api/userAPI/", {
+                headers: {
+                    Authorization: `token ${token}`,
+                },
+            });
 
         console.log(res.data)
-        if(res.data.id) {
+        if (res.data.id) {
             dispatch(updateUserInfo({
                 'id': res.data.id,
                 'phone': res.data.phone,
@@ -125,9 +173,9 @@ export const apiCall_FetchSliderData = async (dispatch) => {
     try {
 
         const res = await axios
-        .get("https://krishnabharambe.pythonanywhere.com/api/allSlidercards/");
+            .get("https://krishnabharambe.pythonanywhere.com/api/allSlidercards/");
         console.log(res.data)
-        if(res.data) {
+        if (res.data) {
             dispatch(getSliderImages(res.data));
             dispatch(startfetchingImagesComplete());
         } else {

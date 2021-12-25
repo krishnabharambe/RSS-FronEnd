@@ -15,6 +15,7 @@ import LoadingPage from './Container/Components/LoadingPage';
 import AllServices from './Container/Components/HomeComp/AllServices';
 import SubServices from './Container/Components/HomeComp/SubServices';
 import SubServiceDetail from './Container/Components/HomeComp/SubServiceDetail';
+import CreateRequest from './Container/Components/HomeComp/CreateRequest';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/allservices" element={<AllServices />} />
             <Route path="/services/:mainID" element={<SubServices />} />
             <Route path="/subservices/:subMainID" element={<SubServiceDetail />} />
+            <Route path="/subservices/createRequest/:subMainID" element={<CreateRequest />} />
           </Routes>
         </div>
 
