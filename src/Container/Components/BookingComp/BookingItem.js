@@ -19,7 +19,9 @@ export default function BookingItem(props) {
 
   return (
     <Link
-      to={""}
+    to={{
+        pathname: "/Request/" + id + "/",
+      }}
       style={{ color: "inherit", textDecoration: "inherit" }}
       key={id}
     >

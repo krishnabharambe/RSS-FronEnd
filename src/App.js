@@ -16,6 +16,7 @@ import AllServices from './Container/Components/HomeComp/AllServices';
 import SubServices from './Container/Components/HomeComp/SubServices';
 import SubServiceDetail from './Container/Components/HomeComp/SubServiceDetail';
 import CreateRequest from './Container/Components/HomeComp/CreateRequest';
+import RequestedBooking from './Container/Components/BookingComp/RequestedBooking';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
             <Route path="/services/:mainID" element={<SubServices />} />
             <Route path="/subservices/:subMainID" element={<SubServiceDetail />} />
             <Route path="/subservices/createRequest/:subMainID" element={<CreateRequest />} />
+            <Route path="/Request/:RequestID" element={<RequestedBooking />} />
           </Routes>
         </div>
 
