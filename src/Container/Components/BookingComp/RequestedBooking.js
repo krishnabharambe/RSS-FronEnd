@@ -10,7 +10,7 @@ export default function RequestedBooking() {
     const [RequestData, setRequestData] = useState()
 
     const getRequestData = async () => {
-        const url = "http://127.0.0.1:8000/api/request/" + RequestID + "/";
+        const url = "https://krishnabharambe.pythonanywhere.com/api/request/" + RequestID + "/";
         const response = await axios.get(url);
         if (!response.data || response.data.length == 0) {
 
