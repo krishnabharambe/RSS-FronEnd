@@ -124,7 +124,6 @@ export const getUserBooking = async (dispatch) => {
             },
         });
         if (res.data) {
-            console.log("i am in", res.data)
             dispatch(viewMyBooking(res.data));
             dispatch(stoploading());
         } else {
